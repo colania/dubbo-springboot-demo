@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-consumer" />
+
+<!--    <dubbo:consumer actives="5"/>-->
+
+    <dubbo:registry check="${check-rpc:false}" address="zookeeper://101.37.169.135:2181"   id="zkreg"  >
+        <dubbo:parameter key="qos.enable" value="false"/>
+    </dubbo:registry>
+
+    <dubbo:reference interface="com.xiaoze.api.service.DemoService" retries="0" timeout="1000" check="false" id="demoService" registry="zkreg"  version="1.0.0">
+        <!--客户端侧方法级限流-->
+<!--        <dubbo:method name="sayHello" actives="5"/>-->
+    </dubbo:reference>
+
+</beans>
