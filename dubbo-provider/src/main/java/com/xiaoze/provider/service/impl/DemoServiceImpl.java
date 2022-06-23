@@ -1,7 +1,7 @@
 package com.xiaoze.provider.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.xiaoze.api.service.DemoService;
+import com.matt.api.service.DemoService;
 
 /**
  * DemoServiceImpl

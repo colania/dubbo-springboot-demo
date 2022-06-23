@@ -9,11 +9,11 @@
 
 <!--    <dubbo:consumer actives="5"/>-->
 
-    <dubbo:registry check="${check-rpc:false}" address="zookeeper://101.37.169.135:2181"   id="zkreg"  >
+    <dubbo:registry check="${check-rpc:false}" address="zookeeper://192.168.31.157:2181"   id="zkreg"  >
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:registry>
 
-    <dubbo:reference interface="com.xiaoze.api.service.DemoService" retries="0" timeout="1000" check="false" id="demoService" registry="zkreg"  version="1.0.0">
+    <dubbo:reference interface="com.matt.api.service.DemoService" retries="0" timeout="1000" check="false" id="demoService" registry="zkreg" version="1.0.0">
         <!--客户端侧方法级限流-->
 <!--        <dubbo:method name="sayHello" actives="5"/>-->
     </dubbo:reference>

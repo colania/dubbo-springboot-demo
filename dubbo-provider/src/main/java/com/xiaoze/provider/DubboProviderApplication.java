@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
+import java.util.ServiceLoader;
+
 /**
  * DubboProviderApplication
  * 服务提供启动类

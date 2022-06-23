@@ -1,4 +1,4 @@
-package com.aisino.threadpool;
+package com.matt.consumer.threadpool;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

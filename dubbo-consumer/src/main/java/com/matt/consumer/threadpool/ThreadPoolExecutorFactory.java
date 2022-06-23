@@ -1,4 +1,4 @@
-package com.aisino.threadpool;
+package com.matt.consumer.threadpool;
 
 import com.google.common.collect.Maps;
 import java.util.Map;
@@ -18,7 +18,7 @@ import org.springframework.util.CollectionUtils;
 /**
  * 描述:线程池创建工厂包装
  *
- * @author 周宁
+ * @author wwei
  * @date 2020/6/18 15:06
  */
 @Component
@@ -50,10 +50,10 @@ public class ThreadPoolExecutorFactory implements DisposableBean {
      * @return ExecutorService
      */
     public static ExecutorService newInstance(
-            com.aisino.threadpool.ThreadPoolExecutorConfig threadPoolExecutorConfig) {
+            ThreadPoolExecutorConfig threadPoolExecutorConfig) {
         return threadPoolCacheMap.computeIfAbsent(threadPoolExecutorConfig.getThreadNamePrefix(),
                 threadNamePrefix -> new ThreadPoolExecutor(threadPoolExecutorConfig.getCorePoolSize(), threadPoolExecutorConfig.getMaximumPoolSize(), threadPoolExecutorConfig.getKeepAliveTime(), threadPoolExecutorConfig.getUnit()
-                        , threadPoolExecutorConfig.getWorkQueue(), new com.aisino.threadpool.NamedThreadFactory(threadNamePrefix), getRejectedExecutionHandler()));
+                        , threadPoolExecutorConfig.getWorkQueue(), new NamedThreadFactory(threadNamePrefix), getRejectedExecutionHandler()));
 
     }
 
@@ -80,7 +80,7 @@ public class ThreadPoolExecutorFactory implements DisposableBean {
         }
         //使用默认线程池来关闭线程池
         ExecutorService shutDownThreadPool = newInstance(
-                com.aisino.threadpool.ThreadPoolExecutorConfig.newFixedThreadPoolConfig("shutDown", 4));
+                ThreadPoolExecutorConfig.newFixedThreadPoolConfig("shutDown", 4));
         CountDownLatch latch = new CountDownLatch(threadPoolCacheMap.size());
         for (String name : threadNames) {
             ExecutorService pool = threadPoolCacheMap.get(name);
