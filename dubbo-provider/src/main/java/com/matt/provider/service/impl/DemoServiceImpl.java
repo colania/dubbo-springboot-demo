@@ -1,4 +1,4 @@
-package com.xiaoze.provider.service.impl;
+package com.matt.provider.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.matt.api.service.DemoService;

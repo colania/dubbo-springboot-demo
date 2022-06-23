@@ -15,7 +15,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.xiaoze.consumer.mapper", sqlSessionFactoryRef = "PrimarySqlSessionFactory")
+@MapperScan(basePackages = "com.matt.consumer.mapper", sqlSessionFactoryRef = "PrimarySqlSessionFactory")
 public class PrimaryDataSourceConfig {
     @Bean(name = "PrimaryDataSource")
     // 表示这个数据源是默认数据源

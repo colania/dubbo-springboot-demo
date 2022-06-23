@@ -1,11 +1,8 @@
-package com.xiaoze.provider;
+package com.matt.provider;
 
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
-
-import java.util.ServiceLoader;
 
 /**
  * DubboProviderApplication

@@ -8,7 +8,7 @@
     <dubbo:application name="dubbo-provider" />
     <dubbo:protocol name="dubbo" port="20880" />
 
-    <bean id="demoService" class="com.xiaoze.provider.service.impl.DemoServiceImpl" />
+    <bean id="demoService" class="com.matt.provider.service.impl.DemoServiceImpl" />
 
     <dubbo:registry check="${check-rpc:false}" address="zookeeper://localhost:2181"  protocol="zookeeper" id="zkreg" >
         <dubbo:parameter key="qos.enable" value="false"/>

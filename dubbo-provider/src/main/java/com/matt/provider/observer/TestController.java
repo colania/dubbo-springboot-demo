@@ -1,4 +1,4 @@
-package com.xiaoze.provider.observer;
+package com.matt.provider.observer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.xiaoze.provider.observer;
+package com.matt.provider.observer;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
