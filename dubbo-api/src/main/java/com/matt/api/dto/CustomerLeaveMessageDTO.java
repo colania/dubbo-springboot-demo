@@ -1,13 +1,16 @@
-package com.matt.consumer.observer;
+package com.matt.api.dto;
+
+import com.matt.api.constant.MsgEventTypeEnum;
+
+import java.io.Serializable;
 
 /**
  * @description:
  * @author：wwei
- * @date: 2022/4/28
+ * @date: 2022/6/26
  */
-public class CustomerLeaveMessage {
-
-    private static final long serialVersionUID = 1L;
+public class CustomerLeaveMessageDTO implements Serializable {
+    private static final long serialVersionUID = -2093271584978112529L;
 
     private String id;    // 主键
 
@@ -19,15 +22,7 @@ public class CustomerLeaveMessage {
 
     private String content;       // 留言内容
 
-    private Integer type;
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
+    private MsgEventTypeEnum type;
 
     public String getId() {
         return id;
@@ -67,5 +62,13 @@ public class CustomerLeaveMessage {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public MsgEventTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(MsgEventTypeEnum type) {
+        this.type = type;
     }
 }

@@ -1,5 +1,7 @@
 package com.matt.provider.observer;
 
+import com.matt.api.constant.MsgEventTypeEnum;
+
 /**
  * @description:
  * @author：wwei
@@ -18,6 +20,8 @@ public class CustomerLeaveMessage {
     private String email;     // 联系邮箱
 
     private String content;       // 留言内容
+
+    private MsgEventTypeEnum type;
 
     public String getId() {
         return id;
@@ -57,5 +61,13 @@ public class CustomerLeaveMessage {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public MsgEventTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(MsgEventTypeEnum type) {
+        this.type = type;
     }
 }

@@ -1,5 +1,6 @@
 package com.matt.provider.observer;
 
+import com.matt.api.constant.MsgEventTypeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ public class TestController {
     @GetMapping("/test")
     public void test() {
         CustomerLeaveMessage msg = new CustomerLeaveMessage();
+        msg.setType(MsgEventTypeEnum.SEND_MSG_TO_ADMINISTRATOR);
         applicationContext.publishEvent(new CustomerLeaveMessageEvent(msg));
 
     }

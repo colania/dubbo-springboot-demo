@@ -32,7 +32,7 @@ public class PrimaryDataSourceConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(datasource);
         bean.setMapperLocations(
-                new PathMatchingResourcePatternResolver().getResources("classpath*:mappingGlobalAuthorityMapper.xml/*.xml"));
+                new PathMatchingResourcePatternResolver().getResources("classpath*:mapper/*.xml"));
         return bean.getObject();// 设置mybatis的xml所在位置
     }
 

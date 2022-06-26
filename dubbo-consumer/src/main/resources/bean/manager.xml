@@ -17,5 +17,9 @@
         <!--客户端侧方法级限流-->
 <!--        <dubbo:method name="sayHello" actives="5"/>-->
     </dubbo:reference>
+    <dubbo:reference interface="com.matt.api.service.ObserverService" retries="0" timeout="1000" check="false" id="observerService" registry="zkreg" version="1.0.0">
+        <!--客户端侧方法级限流-->
+        <!--        <dubbo:method name="sayHello" actives="5"/>-->
+    </dubbo:reference>
 
 </beans>

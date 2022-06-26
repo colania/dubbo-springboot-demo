@@ -1,5 +1,6 @@
 package com.matt.consumer;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import com.matt.api.service.DemoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
